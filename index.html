@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base Taggers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background: radial-gradient(circle at top, #111, #000);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* ---------------- HEADER ---------------- */
+        .hero {
+            height: 100vh;
+            background: url("images/hero-bg.jpg") center/cover no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), black);
+        }
+
+        .hero-content {
+            position: relative;
+            text-align: center;
+            z-index: 2;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .hero-logo {
+            width: 380px;
+            max-width: 90%;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 0 30px #00ffcc);
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-shadow: 0 0 25px #00ffcc;
+        }
+
+        .hero-subtitle {
+            margin-top: 15px;
+            font-size: 1.2rem;
+            opacity: 0.85;
+        }
+
+        /* ---------------- BUTTONS ---------------- */
+        .button-row {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            margin-top: 35px;
+        }
+
+        .image-btn {
+            width: 220px;
+            cursor: pointer;
+            transition: 0.2s;
+            filter: drop-shadow(0 0 20px rgba(0,255,200,0.4));
+        }
+
+        .image-btn:hover {
+            transform: scale(1.08);
+            filter: drop-shadow(0 0 35px rgba(0,255,200,1));
+        }
+
+        /* ---------------- GAMEPLAY SECTION ---------------- */
+        .section {
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 50px;
+            text-shadow: 0 0 20px #00ffcc;
+        }
+
+        .gameplay-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .gameplay-card {
+            background: rgba(255,255,255,0.04);
+            border-radius: 16px;
+            overflow: hidden;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 0 25px rgba(0,255,200,0.2);
+            transition: 0.3s;
+        }
+
+        .gameplay-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 45px rgba(0,255,200,0.6);
+        }
+
+        .gameplay-card img {
+            width: 100%;
+            display: block;
+        }
+
+        /* ---------------- FOOTER ---------------- */
+        footer {
+            padding: 50px 5%;
+            text-align: center;
+            background: black;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-text {
+            opacity: 0.5;
+            font-size: 0.9rem;
+        }
+
+        /* ---------------- ANIMATIONS ---------------- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+    <div class="hero-content">
+        <img src="images/logo.png" class="hero-logo" alt="Base Taggers Logo">
+
+        <div class="hero-title">Base Taggers</div>
+        <div class="hero-subtitle">Run. Climb. Tag. Dominate.</div>
+
+        <div class="button-row">
+            <img src="images/discord-button.png" class="image-btn" onclick="openDiscord()" alt="Join Discord">
+            <img src="images/download-button.png" class="image-btn" onclick="downloadGame()" alt="Download Game">
+        </div>
+    </div>
+</section>
+
+<!-- ================= GAMEPLAY ================= -->
+<section class="section">
+    <div class="section-title">Gameplay</div>
+
+    <div class="gameplay-grid">
+        <div class="gameplay-card">
+            <img src="images/gameplay1.jpg" alt="Gameplay 1">
+        </div>
+
+        <div class="gameplay-card">
+            <img src="images/gameplay2.jpg" alt="Gameplay 2">
+        </div>
+
+        <div class="gameplay-card">
+            <img src="images/gameplay3.jpg" alt="Gameplay 3">
+        </div>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <div class="footer-text">
+        © 2025 Base Taggers — Fan-made Gorilla Tag–style experience
+    </div>
+</footer>
+
+<script>
+    // ✅ CHANGE THESE LINKS TO YOUR REAL ONES
+    const DISCORD_LINK = "https://discord.gg/YOURSERVER";
+    const DOWNLOAD_LINK = "https://yourdownloadlink.com";
+
+    function openDiscord() {
+        window.open(DISCORD_LINK, "_blank");
+    }
+
+    function downloadGame() {
+        window.open(DOWNLOAD_LINK, "_blank");
+    }
+</script>
+
+</body>
+</html>
